@@ -65,7 +65,10 @@ class _GetStartScreenState extends State<GetStartScreen> {
                           style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                         SizedBox(height: 8),
-                        Stack(children: [CustomGradeDropdown()]),
+                        Stack(children: [
+                          CustomGradeDropdown()
+                          ]
+                        ),
                     
                         SizedBox(height: 8),
                     
