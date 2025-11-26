@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnova_app/Wigets/CustomTextField.dart';
+import 'package:learnova_app/Widgets/CustomButton.dart';
+import 'package:learnova_app/Widgets/CustomTextField.dart';
 
 class LogInScreen extends StatefulWidget {
   const LogInScreen({super.key});
@@ -10,6 +11,7 @@ class LogInScreen extends StatefulWidget {
 
 class _LogInScreenState extends State<LogInScreen> {
   bool isStudent = true;
+  bool obscurePassword = true;
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +96,56 @@ class _LogInScreenState extends State<LogInScreen> {
                     style: TextStyle(
                       fontSize: 14,
                       fontWeight: FontWeight.bold,
-                      color:Colors.grey,
+                      color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 8,),
+                  SizedBox(height: 8),
                   CustomTextfield(text: "Enter your email"),
+                  SizedBox(height: 8),
+                  Text(
+                    "Password",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  CustomTextfield(
+                    text: "Enter your Password",
+                    obscureText: obscurePassword,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        obscurePassword
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility,
+                        color: const Color.fromARGB(255, 115, 114, 114),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          obscurePassword = !obscurePassword;
+                        });
+                      },
+                    ),
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Forgot password?",
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.blue,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(height: 16,),
+                  CustomButton(text: "Log In", onPressed: (){})
                 ],
               ),
             ),

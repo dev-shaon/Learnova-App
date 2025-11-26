@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 
 class CustomTextfield extends StatelessWidget {
   final String text;
-  final IconData? icon;
   final TextEditingController? controller;
   final bool obscureText;
+  final Widget? suffixIcon; 
 
   const CustomTextfield({
     super.key,
     required this.text,
-    this.icon,
-    this.controller, 
+    this.controller,
     this.obscureText = false,
+    this.suffixIcon,
   });
 
   @override
@@ -20,17 +20,17 @@ class CustomTextfield extends StatelessWidget {
       controller: controller,
       obscureText: obscureText,
       decoration: InputDecoration(
-        prefixIcon: icon != null ? Icon(icon, color: Colors.black) : null,
+        hintText: text,
         fillColor: const Color.fromARGB(255, 239, 239, 239),
         filled: true,
-        hintText: text,
-        hintStyle:  TextStyle(color: Colors.grey),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(16),
           borderSide: BorderSide.none,
         ),
+        suffixIcon: suffixIcon,
       ),
-      style:  TextStyle(color: Colors.black),
+      style: TextStyle(color: Colors.black),
     );
   }
 }
+
