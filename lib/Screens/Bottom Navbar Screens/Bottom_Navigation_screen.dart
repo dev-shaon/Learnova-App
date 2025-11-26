@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Home_Screen.dart';
+import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Profile_Screen.dart';
 import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Video_Screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
@@ -17,7 +18,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
     VideoScreen(),
     Center(child: Text("Profile Screen")),
     Center(child: Text("Profile Screen")),
-    Center(child: Text("Profile Screen")),
+    ProfileScreen()
   ];
 
   @override
