@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:learnova_app/Widgets/Home_Widget.dart';
+import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Search_Screen.dart';
+import 'package:learnova_app/Widgets/Home_Screen_Widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -52,7 +53,9 @@ class _HomeScreenState extends State<HomeScreen>
           Padding(
             padding: const EdgeInsets.all(10),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context)=>SearchScreen()));
+              },
               icon: Icon(Icons.search, size: 30, color: Colors.black),
             ),
           ),
@@ -73,20 +76,19 @@ class _HomeScreenState extends State<HomeScreen>
                   isScrollable: true,
                   labelColor: Colors.black,
                   unselectedLabelColor: Colors.grey,
-                  labelStyle:  TextStyle(fontSize: 18),
-                  unselectedLabelStyle:  TextStyle(fontSize: 16),
+                  labelStyle: TextStyle(fontSize: 18),
+                  unselectedLabelStyle: TextStyle(fontSize: 16),
                   indicatorColor: Colors.black,
                   indicatorSize: TabBarIndicatorSize.label,
-                  tabs:  [
+                  tabs: [
                     Tab(text: "Trending"),
                     Tab(text: "New"),
                     Tab(text: "Following"),
                   ],
                 ),
 
-                 Divider(height: 1, thickness: 1, color: Colors.grey),
-                 SizedBox(height: 15),
-
+                Divider(height: 1, thickness: 1, color: Colors.grey),
+                SizedBox(height: 15),
 
                 SizedBox(
                   height: 40,
@@ -132,7 +134,6 @@ class _HomeScreenState extends State<HomeScreen>
                 SizedBox(height: 20),
 
                 HomeWidget(),
-                
               ],
             ),
           ),
