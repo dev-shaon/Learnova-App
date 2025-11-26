@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:learnova_app/Screens/Create_Screen.dart';
+import 'package:learnova_app/Screens/Get_Start_Screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 import 'package:learnova_app/Widgets/CustomTextField.dart';
 
@@ -147,7 +148,9 @@ class _LogInScreenState extends State<LogInScreen> {
                     ],
                   ),
                   SizedBox(height: 16),
-                  CustomButton(text: "Log In", onPressed: () {}),
+                  CustomButton(text: "Log In", onPressed: () {
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>GetStartScreen()));
+                  }),
                   SizedBox(height: 16),
                   GestureDetector(
                     onTap: () {},
