@@ -16,21 +16,35 @@ class CustomTextfield extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextField(
-      controller: controller,
-      obscureText: obscureText,
-      decoration: InputDecoration(
-        hintText: text,
-        fillColor: const Color.fromARGB(255, 239, 239, 239),
-        filled: true,
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16),
-          borderSide: BorderSide.none,
-        ),
-        suffixIcon: suffixIcon,
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xFFF1F4F8),
+        borderRadius: BorderRadius.circular(16),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 2,
+            blurRadius: 5,
+            offset: Offset(0, 3), 
+          ),
+        ],
       ),
-      style: TextStyle(color: Colors.black),
+      child: TextField(
+        controller: controller,
+        obscureText: obscureText,
+        decoration: InputDecoration(
+          hintText: text,
+          hintStyle: TextStyle(color: Colors.grey),
+          filled: true,
+          fillColor: Colors.transparent,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16),
+            borderSide: BorderSide.none,
+          ),
+          suffixIcon: suffixIcon,
+        ),
+        style: TextStyle(color: Colors.black),
+      ),
     );
   }
 }
-

@@ -1,18 +1,18 @@
+// import 'package:flutter/gestures.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:learnova_app/Screens/Create_Screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 import 'package:learnova_app/Widgets/CustomTextField.dart';
 
-class LogInScreen extends StatefulWidget {
-  const LogInScreen({super.key});
+class CreateScreen extends StatefulWidget {
+  const CreateScreen({super.key});
 
   @override
-  State<LogInScreen> createState() => _LogInScreenState();
+  State<CreateScreen> createState() => _CreateScreenState();
 }
 
-class _LogInScreenState extends State<LogInScreen> {
-  bool isStudent = true;
+class _CreateScreenState extends State<CreateScreen> {
+  bool isTeacher = true;
   bool obscurePassword = true;
 
   @override
@@ -26,7 +26,7 @@ class _LogInScreenState extends State<LogInScreen> {
             SizedBox(height: 29),
             Center(
               child: Text(
-                "Log In",
+                "Create Account",
                 style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
               ),
             ),
@@ -37,7 +37,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      isStudent = true;
+                      isTeacher = true;
                     });
                   },
                   child: Column(
@@ -47,14 +47,14 @@ class _LogInScreenState extends State<LogInScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: isStudent ? Colors.blue : Colors.grey,
+                          color: isTeacher ? Colors.blue : Colors.grey,
                         ),
                       ),
                       SizedBox(height: 5),
                       Container(
                         height: 2,
-                        width: 60,
-                        color: isStudent ? Colors.blue : Colors.transparent,
+                        width: 110,
+                        color: isTeacher ? Colors.blue : Colors.transparent,
                       ),
                     ],
                   ),
@@ -63,7 +63,7 @@ class _LogInScreenState extends State<LogInScreen> {
                 GestureDetector(
                   onTap: () {
                     setState(() {
-                      isStudent = false;
+                      isTeacher = false;
                     });
                   },
                   child: Column(
@@ -73,14 +73,14 @@ class _LogInScreenState extends State<LogInScreen> {
                         style: TextStyle(
                           fontSize: 16,
                           fontWeight: FontWeight.bold,
-                          color: isStudent ? Colors.grey : Colors.blue,
+                          color: isTeacher ? Colors.grey : Colors.blue,
                         ),
                       ),
                       SizedBox(height: 5),
                       Container(
                         height: 2,
-                        width: 60,
-                        color: isStudent ? Colors.transparent : Colors.blue,
+                        width: 110,
+                        color: isTeacher ? Colors.transparent : Colors.blue,
                       ),
                     ],
                   ),
@@ -94,6 +94,18 @@ class _LogInScreenState extends State<LogInScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
+                    "Name",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  CustomTextfield(text: "Enter your Name"),
+
+                  SizedBox(height: 8),
+                  Text(
                     "Email",
                     style: TextStyle(
                       fontSize: 14,
@@ -103,7 +115,9 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                   SizedBox(height: 8),
                   CustomTextfield(text: "Enter your email"),
+
                   SizedBox(height: 8),
+                  
                   Text(
                     "Password",
                     style: TextStyle(
@@ -113,9 +127,8 @@ class _LogInScreenState extends State<LogInScreen> {
                     ),
                   ),
                   SizedBox(height: 8),
-                  CustomTextfield(
-                    text: "Enter your Password",
-                    obscureText: obscurePassword,
+                  CustomTextfield(text: "Enter your Password",
+                  obscureText: obscurePassword,
                     suffixIcon: IconButton(
                       icon: Icon(
                         obscurePassword
@@ -128,76 +141,56 @@ class _LogInScreenState extends State<LogInScreen> {
                           obscurePassword = !obscurePassword;
                         });
                       },
+                    ),),
+
+                  SizedBox(height: 8),
+                  Text(
+                    "Confirm Password",
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.grey,
                     ),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      TextButton(
-                        onPressed: () {},
-                        child: Text(
-                          "Forgot password?",
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.blue,
-                          ),
-                        ),
+                  SizedBox(height: 8),
+                  CustomTextfield(text: "Confirm your Password",
+                  obscureText: obscurePassword,
+                    suffixIcon: IconButton(
+                      icon: Icon(
+                        obscurePassword
+                            ? Icons.visibility_off_outlined
+                            : Icons.visibility,
+                        color: const Color.fromARGB(255, 115, 114, 114),
                       ),
-                    ],
-                  ),
-                  SizedBox(height: 16),
-                  CustomButton(text: "Log In", onPressed: () {}),
-                  SizedBox(height: 16),
-                  GestureDetector(
-                    onTap: () {},
-                    child: Container(
-                      width: double.infinity,
-                      height: 56,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(20),
-                        color: Colors.white70,
-                      ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image(image: AssetImage("assets/images/Google.png")),
-                          SizedBox(width: 10),
-                          Text(
-                            "Login with Google",
-                            style: TextStyle(
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.grey,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
-                  SizedBox(height: 16),
-                  Row(
+                      onPressed: () {
+                        setState(() {
+                          obscurePassword = !obscurePassword;
+                        });
+                      },
+                    ),),
+                  SizedBox(height: 20),
+                  CustomButton(text: "Create Account", onPressed: () {}),
+                ],
+              ),
+            ),
+            SizedBox(height: 24,),
+            Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       RichText(
                         text: TextSpan(
-                          text: "New to Learnova? ",
+                          text: "Already have an account? ",
                           style: TextStyle(color: Colors.black, fontSize: 14),
                           children: [
                             TextSpan(
-                              text: "Create an Account",
+                              text: "Log In",
                               style: TextStyle(
                                 color: Colors.blue,
                                 fontWeight: FontWeight.bold,
                               ),
                               recognizer: TapGestureRecognizer()
                                 ..onTap = () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => CreateScreen(),
-                                    ),
-                                  );
+                                  Navigator.pop(context);
                                 },
                             ),
                           ],
@@ -205,9 +198,6 @@ class _LogInScreenState extends State<LogInScreen> {
                       ),
                     ],
                   ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
