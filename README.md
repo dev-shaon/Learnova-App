@@ -51,7 +51,7 @@ lib/
 
 ## 📂 APK
 
-The release APK can be uploaded to Google Drive and shared here: `[Google Drive Link]`
+The release APK can be uploaded to Google Drive and shared here: `[[Google Drive Link](https://drive.google.com/drive/folders/1ULIYEx7NNZ0fXbIYUKVZU8k9TLt7fEey?usp=sharing)]`
 
 ## 📌 Repository Link
 
