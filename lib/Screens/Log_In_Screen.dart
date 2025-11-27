@@ -41,7 +41,9 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ),
               ),
+
               SizedBox(height: 16.h),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -61,7 +63,9 @@ class _LogInScreenState extends State<LogInScreen> {
                             color: isStudent ? Colors.blue : Colors.grey,
                           ),
                         ),
+
                         SizedBox(height: 5.h),
+
                         Container(
                           height: 2.h,
                           width: 60.w,
@@ -70,7 +74,9 @@ class _LogInScreenState extends State<LogInScreen> {
                       ],
                     ),
                   ),
+
                   SizedBox(width: 40.w),
+
                   GestureDetector(
                     onTap: () {
                       setState(() {
@@ -87,7 +93,9 @@ class _LogInScreenState extends State<LogInScreen> {
                             color: isStudent ? Colors.grey : Colors.blue,
                           ),
                         ),
+
                         SizedBox(height: 5.h),
+
                         Container(
                           height: 2.h,
                           width: 60.w,
@@ -98,7 +106,9 @@ class _LogInScreenState extends State<LogInScreen> {
                   ),
                 ],
               ),
+
               SizedBox(height: 24.h),
+
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20.w),
                 child: Column(
@@ -112,7 +122,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         color: Colors.grey,
                       ),
                     ),
+
                     SizedBox(height: 8.h),
+
                     CustomTextfield(text: "Enter your email"),
                     SizedBox(height: 8.h),
                     Text(
@@ -123,15 +135,15 @@ class _LogInScreenState extends State<LogInScreen> {
                         color: Colors.grey,
                       ),
                     ),
+
                     SizedBox(height: 8.h),
+
                     CustomTextfield(
                       text: "Enter your Password",
                       obscureText: obscurePassword,
                       suffixIcon: IconButton(
                         icon: Icon(
-                          obscurePassword
-                              ? Icons.visibility_off_outlined
-                              : Icons.visibility,
+                          obscurePassword ? Icons.visibility_off_outlined : Icons.visibility,
                           color: const Color.fromARGB(255, 115, 114, 114),
                         ),
                         onPressed: () {
@@ -169,7 +181,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         );
                       },
                     ),
+
                     SizedBox(height: 16.h),
+
                     GestureDetector(
                       onTap: () {},
                       child: Container(
@@ -196,7 +210,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         ),
                       ),
                     ),
+
                     SizedBox(height: 16.h),
+
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -231,7 +247,9 @@ class _LogInScreenState extends State<LogInScreen> {
                         ),
                       ],
                     ),
+
                     SizedBox(height: 20.h),
+                    
                   ],
                 ),
               ),

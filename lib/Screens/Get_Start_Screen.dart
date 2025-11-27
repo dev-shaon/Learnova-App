@@ -92,7 +92,7 @@ class _GetStartScreenState extends State<GetStartScreen> {
                         CustomButton(
                           text: "Get Started",
                           onPressed: () {
-                            Navigator.push(
+                            Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
                                 builder: (context) => BottomNavigationScreen(),

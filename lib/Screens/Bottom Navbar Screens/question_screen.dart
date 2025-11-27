@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Bottom_Navigation_screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 
 class Understanding extends StatefulWidget {
@@ -29,7 +30,7 @@ class _UnderstandingState extends State<Understanding> {
               Row(
                 children: [
                   IconButton(
-                    onPressed: () => Navigator.pop(context),
+                    onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>BottomNavigationScreen())),
                     icon: Icon(Icons.arrow_circle_left_outlined, size: 32),
                   ),
                   Text(
