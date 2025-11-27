@@ -109,7 +109,9 @@ class _VideoScreenState extends State<VideoScreen> {
                       backgroundImage: AssetImage("assets/images/video_p.png"),
                       backgroundColor: Colors.white,
                     ),
+
                     SizedBox(width: 12),
+                    
                     Text(
                       "Jessica Roy",
                       style: TextStyle(
@@ -118,12 +120,17 @@ class _VideoScreenState extends State<VideoScreen> {
                         fontSize: 18,
                       ),
                     ),
+
                     SizedBox(width: 12),
+
                     _buildFollowButton(),
+
                     SizedBox(width: 14),
+
                     _buildLikeButton(),
                   ],
                 ),
+
                 SizedBox(height: 8),
 
                 Text(

@@ -98,12 +98,14 @@ class ResultScreen extends StatelessWidget {
               ],
             ),
           ),
+
           SizedBox(height: 12),
 
           Text(
             "Explanation",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
+
           SizedBox(height: 12),
 
           Text(
@@ -114,7 +116,9 @@ class ResultScreen extends StatelessWidget {
               color: Color(0xff545454),
             ),
           ),
+
           SizedBox(height: 12),
+
           _bulletPoint(
             "Scared (害怕) 和 Frightening (嚇人) 表示狗會讓其他人或動物感到恐懼，這與狗對其他狗的反應不符。",
           ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Bottom_Navigation_screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 import 'package:learnova_app/Widgets/CustomTextField.dart';
@@ -19,19 +20,18 @@ class _GetStartScreenState extends State<GetStartScreen> {
       backgroundColor: Colors.grey,
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
-          child: Column(
-            children: [
-              Container(
-                width: double.infinity,
-                height: 885,
-                decoration: BoxDecoration(
-                  color: Color(0xFFFFFFFF),
-                  borderRadius: BorderRadius.circular(20),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.all(20),
-                  child: SingleChildScrollView(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 14.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  width: 1.sw,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20.r),
+                  ),
+                  child: Padding(
+                    padding: EdgeInsets.all(20.w),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -39,51 +39,56 @@ class _GetStartScreenState extends State<GetStartScreen> {
                           "Personalizing course \naccording to your profile",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
-                            fontSize: 24,
+                            fontSize: 24.sp,
                           ),
                         ),
-                        SizedBox(height: 24),
-                    
+
+                        SizedBox(height: 24.h),
+
                         Text(
-                          "current school",
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          "Current school",
+                          style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                         ),
-                        SizedBox(height: 8),
+
+                        SizedBox(height: 8.h),
+
                         CustomTextfield(text: "Enter your school"),
-                        SizedBox(height: 8),
-                    
+
+                        SizedBox(height: 8.h),
+
                         Text(
                           "Elective Subject",
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                         ),
-                        SizedBox(height: 8),
+
+                        SizedBox(height: 8.h),
+
                         CustomTextfield(text: "Enter your Elective Subject"),
-                        SizedBox(height: 8),
-                    
+
+                        SizedBox(height: 8.h),
+
                         Text(
                           "Current Grade",
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                         ),
-                        SizedBox(height: 8),
-                        Stack(children: [
-                          CustomGradeDropdown()
-                          ]
-                        ),
-                    
-                        SizedBox(height: 8),
-                    
+
+                        SizedBox(height: 8.h),
+
+                        CustomGradeDropdown(),
+
+                        SizedBox(height: 8.h),
+
                         Text(
-                          "How Did you Hear about us ?",
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          "How Did you Hear about us?",
+                          style: TextStyle(fontSize: 16.sp, color: Colors.grey),
                         ),
-                        SizedBox(height: 8),
-                        
-                        SizedBox(height: 8),
-                         Stack(children: [
-                          Information()
-                          ]
-                        ),
-                        SizedBox(height: 300),
+
+                        SizedBox(height: 8.h),
+
+                        Information(),
+
+                        SizedBox(height: 24.h),
+
                         CustomButton(
                           text: "Get Started",
                           onPressed: () {
@@ -95,12 +100,15 @@ class _GetStartScreenState extends State<GetStartScreen> {
                             );
                           },
                         ),
+
+                        SizedBox(height: 20.h),
+                        
                       ],
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

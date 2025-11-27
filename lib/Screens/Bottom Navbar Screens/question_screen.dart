@@ -23,7 +23,9 @@ class _UnderstandingState extends State<Understanding> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+
               SizedBox(height: 24),
+              
               Row(
                 children: [
                   IconButton(
@@ -36,12 +38,16 @@ class _UnderstandingState extends State<Understanding> {
                   ),
                 ],
               ),
+
               SizedBox(height: 24),
+
               Text(
                 "Let’s test your understanding",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
+
               SizedBox(height: 24),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -55,9 +61,13 @@ class _UnderstandingState extends State<Understanding> {
                   ),
                 ],
               ),
+
               SizedBox(height: 40),
+
               _questionContainer(),
+
               SizedBox(height: 32),
+
               Column(
                 children: List.generate(
                   options.length,

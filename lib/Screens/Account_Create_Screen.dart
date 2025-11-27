@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:learnova_app/Screens/Get_Start_Screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 import 'package:learnova_app/Widgets/CustomTextField.dart';
 
@@ -17,19 +19,27 @@ class _CreateScreenState extends State<CreateScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
+      body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Image(image: AssetImage("assets/images/first_Image.png")),
-            SizedBox(height: 29),
+            Image.asset(
+              "assets/images/first_Image.png",
+              width: 1.sw,
+              fit: BoxFit.cover,
+            ),
+
+            SizedBox(height: 29.h),
+
             Center(
               child: Text(
                 "Create Account",
-                style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
+                style: TextStyle(fontSize: 22.sp, fontWeight: FontWeight.bold),
               ),
             ),
-            SizedBox(height: 16),
+
+            SizedBox(height: 16.h),
+
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -44,21 +54,25 @@ class _CreateScreenState extends State<CreateScreen> {
                       Text(
                         "Student",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                           color: isTeacher ? Colors.blue : Colors.grey,
                         ),
                       ),
-                      SizedBox(height: 5),
+
+                      SizedBox(height: 5.h),
+
                       Container(
-                        height: 2,
-                        width: 110,
+                        height: 2.h,
+                        width: 110.w,
                         color: isTeacher ? Colors.blue : Colors.transparent,
                       ),
                     ],
                   ),
                 ),
-                SizedBox(width: 40),
+
+                SizedBox(width: 40.w),
+
                 GestureDetector(
                   onTap: () {
                     setState(() {
@@ -70,15 +84,17 @@ class _CreateScreenState extends State<CreateScreen> {
                       Text(
                         "Teacher",
                         style: TextStyle(
-                          fontSize: 16,
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                           color: isTeacher ? Colors.grey : Colors.blue,
                         ),
                       ),
-                      SizedBox(height: 5),
+
+                      SizedBox(height: 5.h),
+
                       Container(
-                        height: 2,
-                        width: 110,
+                        height: 2.h,
+                        width: 110.w,
                         color: isTeacher ? Colors.transparent : Colors.blue,
                       ),
                     ],
@@ -86,48 +102,58 @@ class _CreateScreenState extends State<CreateScreen> {
                 ),
               ],
             ),
-            SizedBox(height: 24),
+
+            SizedBox(height: 24.h),
+
             Padding(
-              padding: const EdgeInsets.all(20),
+              padding: EdgeInsets.symmetric(horizontal: 20.w),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Name",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 8),
+
+                  SizedBox(height: 8.h),
+
                   CustomTextfield(text: "Enter your Name"),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
+
                   Text(
                     "Email",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 8),
+
+                  SizedBox(height: 8.h),
+
                   CustomTextfield(text: "Enter your email"),
 
-                  SizedBox(height: 8),
-                  
+                  SizedBox(height: 8.h),
+
                   Text(
                     "Password",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  CustomTextfield(text: "Enter your Password",
-                  obscureText: obscurePassword,
+
+                  SizedBox(height: 8.h),
+
+                  CustomTextfield(
+                    text: "Enter your Password",
+                    obscureText: obscurePassword,
                     suffixIcon: IconButton(
                       icon: Icon(
                         obscurePassword
@@ -140,20 +166,25 @@ class _CreateScreenState extends State<CreateScreen> {
                           obscurePassword = !obscurePassword;
                         });
                       },
-                    ),),
+                    ),
+                  ),
 
-                  SizedBox(height: 8),
+                  SizedBox(height: 8.h),
+
                   Text(
                     "Confirm Password",
                     style: TextStyle(
-                      fontSize: 14,
+                      fontSize: 14.sp,
                       fontWeight: FontWeight.bold,
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 8),
-                  CustomTextfield(text: "Confirm your Password",
-                  obscureText: obscurePassword,
+
+                  SizedBox(height: 8.h),
+
+                  CustomTextfield(
+                    text: "Confirm your Password",
+                    obscureText: obscurePassword,
                     suffixIcon: IconButton(
                       icon: Icon(
                         obscurePassword
@@ -166,37 +197,55 @@ class _CreateScreenState extends State<CreateScreen> {
                           obscurePassword = !obscurePassword;
                         });
                       },
-                    ),),
-                  SizedBox(height: 20),
-                  CustomButton(text: "Create Account", onPressed: () {}),
+                    ),
+                  ),
+
+                  SizedBox(height: 20.h),
+
+                  CustomButton(
+                    text: "Create Account",
+                    onPressed: () {
+                      Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => GetStartScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
-            SizedBox(height: 24,),
+
+            SizedBox(height: 24.h),
+
             Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                RichText(
+                  text: TextSpan(
+                    text: "Already have an account? ",
+                    style: TextStyle(color: Colors.black, fontSize: 14.sp),
                     children: [
-                      RichText(
-                        text: TextSpan(
-                          text: "Already have an account? ",
-                          style: TextStyle(color: Colors.black, fontSize: 14),
-                          children: [
-                            TextSpan(
-                              text: "Log In",
-                              style: TextStyle(
-                                color: Colors.blue,
-                                fontWeight: FontWeight.bold,
-                              ),
-                              recognizer: TapGestureRecognizer()
-                                ..onTap = () {
-                                  Navigator.pop(context);
-                                },
-                            ),
-                          ],
+                      TextSpan(
+                        text: "Log In",
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14.sp,
                         ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.pop(context);
+                          },
                       ),
                     ],
                   ),
+                ),
+              ],
+            ),
+            
+            SizedBox(height: 20.h),
           ],
         ),
       ),

@@ -49,7 +49,9 @@ class ProfileScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
+
                    SizedBox(height: 8),
+
                     Text(
                       "Jessica Roy",
                       style: TextStyle(
@@ -61,7 +63,9 @@ class ProfileScreen extends StatelessWidget {
                       "Joined since - Jun 2024",
                       style: TextStyle(color: Colors.grey),
                     ),
+
                     SizedBox(height: 16),
+
                     Container(
                       height: 70,
                       width: double.infinity,
@@ -112,7 +116,9 @@ class ProfileScreen extends StatelessWidget {
               SizedBox(height: 16),
 
               CourseCard(),
+
               SizedBox(height: 16),
+              
               CourseCard(),
             ],
           ),
