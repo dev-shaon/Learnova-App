@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnova_app/Screens/Bottom Navbar Screens/Home_Screen.dart';
 import 'package:learnova_app/Screens/Bottom Navbar Screens/Profile_Screen.dart';
 import 'package:learnova_app/Screens/Bottom Navbar Screens/Video_Screen.dart';
+import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/understanding.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});
@@ -16,7 +17,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   final List<Widget> screens = [
     HomeScreen(),
     VideoScreen(),
-    Center(child: Text("Screen 3")),
+    Understanding(),
     Center(child: Text("Screen 4")),
     ProfileScreen()
   ];

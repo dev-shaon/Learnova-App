@@ -49,7 +49,7 @@ class ProfileScreen extends StatelessWidget {
                         fit: BoxFit.cover,
                       ),
                     ),
-                    const SizedBox(height: 8),
+                   SizedBox(height: 8),
                     Text(
                       "Jessica Roy",
                       style: TextStyle(
@@ -61,7 +61,7 @@ class ProfileScreen extends StatelessWidget {
                       "Joined since - Jun 2024",
                       style: TextStyle(color: Colors.grey),
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Container(
                       height: 70,
                       width: double.infinity,
@@ -75,19 +75,24 @@ class ProfileScreen extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [
                             StatusItem(count: "05", label: "In progress"),
+
                             VerticalDivider(
                               color: Colors.black,
                               thickness: 1,
                               indent: 5,
                               endIndent: 5,
                             ),
+
+
                             StatusItem(count: "01", label: "Completed"),
+                            
                             VerticalDivider(
                               color: Colors.black,
                               thickness: 1,
                               indent: 5,
                               endIndent: 5,
                             ),
+
                             StatusItem(count: "05", label: "Following"),
                           ],
                         ),

@@ -45,7 +45,9 @@ class _CustomGradeDropdownState extends State<CustomGradeDropdown> {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text(selected, style: TextStyle(fontSize: 16)),
-                Icon(isOpen ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down),
+                Icon(
+                  isOpen ? Icons.keyboard_arrow_up : Icons.keyboard_arrow_down,
+                ),
               ],
             ),
           ),
@@ -54,26 +56,34 @@ class _CustomGradeDropdownState extends State<CustomGradeDropdown> {
         if (isOpen)
           Container(
             width: double.infinity,
-            height: 150, 
+            height: 150,
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
-              boxShadow: [
-                BoxShadow(color: Colors.black12, blurRadius: 6),
-              ],
+              boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 6)],
             ),
             child: ListView.builder(
               padding: EdgeInsets.zero,
               itemCount: items.length,
               itemBuilder: (context, index) {
-                return ListTile(
-                  title: Center(child: Text(items[index])),
-                  onTap: () {
-                    setState(() {
-                      selected = items[index];
-                      isOpen = false;
-                    });
-                  },
+                return Column(
+                  children: [
+                    ListTile(
+                      title: Center(child: Text(items[index])),
+                      onTap: () {
+                        setState(() {
+                          selected = items[index];
+                          isOpen = false;
+                        });
+                      },
+                    ),
+                    if (index != items.length - 1)
+                      Divider(
+                        height: 1,
+                        thickness: 1,
+                        color: Colors.grey.shade300,
+                      ),
+                  ],
                 );
               },
             ),
