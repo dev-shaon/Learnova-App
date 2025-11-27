@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:learnova_app/Screens/Bottom Navbar Screens/Home_Screen.dart';
 import 'package:learnova_app/Screens/Bottom Navbar Screens/Profile_Screen.dart';
 import 'package:learnova_app/Screens/Bottom Navbar Screens/Video_Screen.dart';
-import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/understanding.dart';
+import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/question_screen.dart';
 
 class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({super.key});

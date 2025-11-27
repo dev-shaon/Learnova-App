@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Result_screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 
 class Understanding extends StatefulWidget {
+  
   const Understanding({super.key});
 
   @override
@@ -12,7 +14,7 @@ class _UnderstandingState extends State<Understanding> {
   List<String> options = ["Scared", "Frightening", "Timid", "Concerned"];
   List<String> alphabet = ["A", "B", "C", "D"];
 
-  int selectedIndex = -1; 
+  int selectedIndex = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -72,8 +74,16 @@ class _UnderstandingState extends State<Understanding> {
                   ),
                 ),
               ),
-              SizedBox(height: 40,),
-              CustomButton(text: "Next", onPressed: (){})
+              SizedBox(height: 40),
+              CustomButton(
+                text: "Next",
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ResultScreen()),
+                  );
+                },
+              ),
             ],
           ),
         ),
@@ -93,10 +103,7 @@ class _UnderstandingState extends State<Understanding> {
       child: Center(
         child: Text(
           "Vocabulary",
-          style: TextStyle(
-            color: Colors.blue,
-            fontWeight: FontWeight.w600,
-          ),
+          style: TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
         ),
       ),
     );
@@ -155,7 +162,7 @@ class _UnderstandingState extends State<Understanding> {
                 ),
                 child: Center(child: Text(alpha)),
               ),
-            )
+            ),
           ],
         ),
       ),
