@@ -13,7 +13,6 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -36,7 +35,7 @@ class ProfileScreen extends StatelessWidget {
                 ],
               ),
 
-              const SizedBox(height: 12),
+              SizedBox(height: 12),
 
               Center(
                 child: Column(
@@ -67,25 +66,48 @@ class ProfileScreen extends StatelessWidget {
                       height: 70,
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xFFC7E9FB),
+                        color: const Color.fromARGB(255, 227, 242, 250),
                         borderRadius: BorderRadius.circular(10),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.all(14),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: const [
+                            StatusItem(count: "05", label: "In progress"),
+                            VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1,
+                              indent: 5,
+                              endIndent: 5,
+                            ),
+                            StatusItem(count: "01", label: "Completed"),
+                            VerticalDivider(
+                              color: Colors.black,
+                              thickness: 1,
+                              indent: 5,
+                              endIndent: 5,
+                            ),
+                            StatusItem(count: "05", label: "Following"),
+                          ],
+                        ),
                       ),
                     ),
                   ],
                 ),
               ),
 
-              const SizedBox(height: 20),
+              SizedBox(height: 20),
 
               Text(
                 "My courses",
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ),
 
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
 
               CourseCard(),
-              const SizedBox(height: 16),
+              SizedBox(height: 16),
               CourseCard(),
             ],
           ),
@@ -95,3 +117,31 @@ class ProfileScreen extends StatelessWidget {
   }
 }
 
+class StatusItem extends StatelessWidget {
+  final String count;
+  final String label;
+
+  const StatusItem({super.key, required this.count, required this.label});
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          count,
+          style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+        ),
+        SizedBox(height: 3),
+        Text(
+          label,
+          style: const TextStyle(
+            color: Colors.grey,
+            fontSize: 12,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ],
+    );
+  }
+}
