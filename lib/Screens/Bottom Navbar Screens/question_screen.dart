@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Result_screen.dart';
 import 'package:learnova_app/Widgets/CustomButton.dart';
 
 class Understanding extends StatefulWidget {
-  
-  const Understanding({super.key});
+  final VoidCallback goToResult; // callback define
+  const Understanding({super.key, required this.goToResult});
 
   @override
   State<Understanding> createState() => _UnderstandingState();
@@ -13,7 +12,6 @@ class Understanding extends StatefulWidget {
 class _UnderstandingState extends State<Understanding> {
   List<String> options = ["Scared", "Frightening", "Timid", "Concerned"];
   List<String> alphabet = ["A", "B", "C", "D"];
-
   int selectedIndex = -1;
 
   @override
@@ -38,13 +36,11 @@ class _UnderstandingState extends State<Understanding> {
                   ),
                 ],
               ),
-
               SizedBox(height: 24),
               Text(
                 "Let’s test your understanding",
                 style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
               ),
-
               SizedBox(height: 24),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -59,12 +55,9 @@ class _UnderstandingState extends State<Understanding> {
                   ),
                 ],
               ),
-
               SizedBox(height: 40),
               _questionContainer(),
-
               SizedBox(height: 32),
-
               Column(
                 children: List.generate(
                   options.length,
@@ -78,10 +71,8 @@ class _UnderstandingState extends State<Understanding> {
               CustomButton(
                 text: "Next",
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => ResultScreen()),
-                  );
+                  widget
+                      .goToResult();
                 },
               ),
             ],
@@ -91,7 +82,6 @@ class _UnderstandingState extends State<Understanding> {
     );
   }
 
-  //this for category tag
   Widget _categoryTag() {
     return Container(
       height: 38,
@@ -109,7 +99,6 @@ class _UnderstandingState extends State<Understanding> {
     );
   }
 
-  // this for question container
   Widget _questionContainer() {
     return Container(
       width: double.infinity,
@@ -125,10 +114,8 @@ class _UnderstandingState extends State<Understanding> {
     );
   }
 
-  // this for option box with click
   Widget _optionBox(String title, String alpha, int index) {
     bool isSelected = selectedIndex == index;
-
     return GestureDetector(
       onTap: () {
         setState(() {

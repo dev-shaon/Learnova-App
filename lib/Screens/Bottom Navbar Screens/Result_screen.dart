@@ -42,7 +42,7 @@ class ResultScreen extends StatelessWidget {
                 SizedBox(height: 24),
                 _answerCard(),
                 SizedBox(height: 32),
-                CustomButton(text: "Continue", onPressed: (){})
+                CustomButton(text: "Continue", onPressed: () {}),
               ],
             ),
           ),
@@ -51,7 +51,7 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
-  // Correct answer card with explanation
+  // this for correct answer Widget
   Widget _answerCard() {
     return Container(
       width: double.infinity,
@@ -63,7 +63,6 @@ class ResultScreen extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          // Answer row
           Container(
             width: double.infinity,
             height: 56,
@@ -100,13 +99,13 @@ class ResultScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 12),
-          // Explanation header
+
           Text(
             "Explanation",
             style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
           ),
           SizedBox(height: 12),
-          // Explanation text
+
           Text(
             "Timid 的意思是缺乏勇氣或信心；容易受到驚嚇，這適合描述一隻狗在其他狗的周圍表現出的從屬或緊張的行為。",
             style: TextStyle(
@@ -125,7 +124,7 @@ class ResultScreen extends StatelessWidget {
     );
   }
 
-  // Bullet point widget
+  // this for bullet point widget
   Widget _bulletPoint(String text) {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 4.0),
@@ -145,7 +144,6 @@ class ResultScreen extends StatelessWidget {
   }
 }
 
-// Category tag widget
 Widget _categoryTag() {
   return Container(
     height: 38,
@@ -163,7 +161,7 @@ Widget _categoryTag() {
   );
 }
 
-// Question container widget
+// this for uestion container widget
 Widget _questionContainer() {
   return Container(
     width: double.infinity,
