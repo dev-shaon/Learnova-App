@@ -14,7 +14,7 @@ class BottomNavigationScreen extends StatefulWidget {
 
 class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
   int currentIndex = 0;
-  bool showResult = false; 
+  bool showResult = false;
 
   @override
   Widget build(BuildContext context) {
@@ -34,9 +34,8 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
           ResultScreen(
             onContinue: () {
               setState(() {
-                showResult =
-                    false; 
-                currentIndex = 0; 
+                showResult = false;
+                currentIndex = 0;
               });
             },
           ),
@@ -49,8 +48,7 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
         onTap: (index) {
           setState(() {
             currentIndex = index;
-            if (index != 2)
-              showResult = false; 
+            if (index != 2) showResult = false;
           });
         },
         selectedItemColor: Colors.blue,
@@ -133,15 +131,15 @@ class ResultScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 24),
                 _categoryTag(),
+
                 SizedBox(height: 40),
                 _questionContainer(),
+                
                 SizedBox(height: 24),
                 _answerCard(),
+                
                 SizedBox(height: 32),
-                CustomButton(
-                  text: "Continue",
-                  onPressed: onContinue, 
-                ),
+                CustomButton(text: "Continue", onPressed: onContinue),
               ],
             ),
           ),
@@ -216,7 +214,7 @@ class ResultScreen extends StatelessWidget {
           ),
 
           SizedBox(height: 12),
-          
+
           _bulletPoint(
             "Scared (害怕) 和 Frightening (嚇人) 表示狗會讓其他人或動物感到恐懼，這與狗對其他狗的反應不符。",
           ),

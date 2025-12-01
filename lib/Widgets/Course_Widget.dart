@@ -36,7 +36,7 @@ class CourseCard extends StatelessWidget {
               ],
             ),
 
-            const SizedBox(height: 6),
+           SizedBox(height: 6),
 
             RichText(
               text: TextSpan(
@@ -51,7 +51,7 @@ class CourseCard extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 10),
+             SizedBox(height: 10),
 
             Row(
               children: [
@@ -64,12 +64,14 @@ class CourseCard extends StatelessWidget {
                     fit: BoxFit.cover,
                   ),
                 ),
-                const SizedBox(width: 8),
+
+                 SizedBox(width: 8),
+
                 Text("Denisa Ozel"),
               ],
             ),
 
-            const Spacer(),
+           Spacer(),
 
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,

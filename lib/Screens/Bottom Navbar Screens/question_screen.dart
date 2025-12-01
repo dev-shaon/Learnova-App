@@ -3,7 +3,7 @@ import 'package:learnova_app/Screens/Bottom%20Navbar%20Screens/Bottom_Navigation
 import 'package:learnova_app/Widgets/CustomButton.dart';
 
 class Understanding extends StatefulWidget {
-  final VoidCallback goToResult; // callback define
+  final VoidCallback goToResult;
   const Understanding({super.key, required this.goToResult});
 
   @override

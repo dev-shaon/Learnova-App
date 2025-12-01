@@ -34,7 +34,9 @@ class HomeWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+
+                     SizedBox(height: 4),
+
                     Row(
                       children: [
                         CircleAvatar(
@@ -45,7 +47,9 @@ class HomeWidget extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(width: 8),
+
+                       SizedBox(width: 8),
+
                         Text(
                           "Jessica Roy",
                           style: TextStyle(
@@ -89,7 +93,9 @@ class HomeWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
+
                     SizedBox(height: 4),
+
                     Row(
                       children: [
                         CircleAvatar(
@@ -100,7 +106,9 @@ class HomeWidget extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
+
                         SizedBox(width: 8),
+
                         Text(
                           "Jessica Roy",
                           style: TextStyle(
@@ -143,7 +151,9 @@ class HomeWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+
+                     SizedBox(height: 4),
+
                     Row(
                       children: [
                         CircleAvatar(
@@ -154,7 +164,9 @@ class HomeWidget extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(width: 8),
+
+                        SizedBox(width: 8),
+
                         Text(
                           "Jessica Roy",
                           style: TextStyle(
@@ -199,7 +211,9 @@ class HomeWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+
+                   SizedBox(height: 4),
+
                     Row(
                       children: [
                         CircleAvatar(
@@ -210,7 +224,9 @@ class HomeWidget extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(width: 8),
+
+                         SizedBox(width: 8),
+
                         Text(
                           "Jessica Roy",
                           style: TextStyle(
@@ -254,7 +270,9 @@ class HomeWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+
+                    SizedBox(height: 4),
+
                     Row(
                       children: [
                         CircleAvatar(
@@ -265,7 +283,9 @@ class HomeWidget extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
-                        const SizedBox(width: 8),
+
+                         SizedBox(width: 8),
+
                         Text(
                           "Jessica Roy",
                           style: TextStyle(
@@ -309,7 +329,9 @@ class HomeWidget extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                    const SizedBox(height: 4),
+
+                     SizedBox(height: 4),
+
                     Row(
                       children: [
                         CircleAvatar(
@@ -320,7 +342,9 @@ class HomeWidget extends StatelessWidget {
                             fit: BoxFit.cover,
                           ),
                         ),
+
                         SizedBox(width: 8),
+                        
                         Text(
                           "Jessica Roy",
                           style: TextStyle(
